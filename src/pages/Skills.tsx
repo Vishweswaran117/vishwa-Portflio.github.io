@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code, Database, Palette, TrendingUp, Gamepad2, Brain } from "lucide-react";
+import { Code, Database, Palette, TrendingUp, Gamepad2, Brain, Monitor } from "lucide-react";
 import { useNavigate } from "react-router";
 
 const skills = [
@@ -26,6 +26,12 @@ const skills = [
     icon: Database,
     items: ["SQL - Database"],
     color: "yellow",
+  },
+  {
+    category: "Operating Systems",
+    icon: Monitor,
+    items: ["Windows", "Linux"],
+    color: "blue",
   },
   {
     category: "Languages",
