@@ -13,7 +13,6 @@ export default function Home() {
     "Business Analyst",
     "Programmer",
     "Developer",
-    "E-Sports Player",
   ];
 
   const PROFILE_URL =
