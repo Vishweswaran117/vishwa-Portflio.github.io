@@ -1,9 +1,7 @@
-import { motion } from "framer-motion";
 import { Trophy, Star, Target, Zap, Award, Medal, Users, Code } from "lucide-react";
 import { useNavigate } from "react-router";
 
 const achievements = [
-  // Academic Excellence Awards
   {
     icon: Award,
     title: "Academic Excellence Awards",
@@ -12,16 +10,14 @@ const achievements = [
     year: "2024–2025",
     color: "cyan",
   },
-  // Eureka 2025 Ideathon
   {
     icon: Medal,
     title: "2nd Place – Eureka 2025 Ideathon",
     description:
-      "Presented \"HIRE ME\" with market research, key features, and go‑to‑market strategy; showcased innovation, teamwork, and problem‑solving",
+      'Presented "HIRE ME" with market research, key features, and go‑to‑market strategy; showcased innovation, teamwork, and problem‑solving',
     year: "2025",
     color: "pink",
   },
-  // HIBOT 2025 Debugging Competition
   {
     icon: Zap,
     title: "2nd Prize – Debugging Competition (HIBOT 2025)",
@@ -30,7 +26,6 @@ const achievements = [
     year: "2025",
     color: "green",
   },
-  // Joint Secretary – Coding Club (2024–2025)
   {
     icon: Users,
     title: "Joint Secretary – Coding Club",
@@ -39,7 +34,6 @@ const achievements = [
     year: "2024–2025",
     color: "purple",
   },
-  // Joint Secretary – School of Computing (2025–2026)
   {
     icon: Users,
     title: "Joint Secretary – School of Computing",
@@ -48,7 +42,6 @@ const achievements = [
     year: "2025–2026",
     color: "cyan",
   },
-  // Secretary – Coding Club (2025–2026)
   {
     icon: Code,
     title: "Secretary – Coding Club",
@@ -64,55 +57,46 @@ export default function Achievements() {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
-      
-      {/* Navigation */}
       <nav className="relative z-10 border-b border-yellow-500/30 bg-white/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <motion.button
+            <button
               onClick={() => navigate("/")}
               className="text-yellow-700 font-bold text-xl font-mono cursor-pointer"
-              whileHover={{ scale: 1.05 }}
             >
               VISHWA
-            </motion.button>
-            
+            </button>
+
             <div className="flex space-x-1 sm:space-x-4">
-              {["Home", "Skills", "Resume", "Achievements", "Projects", "Contact"].map((item) => (
-                <motion.button
-                  key={item}
-                  onClick={() => navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
-                  className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-gray-700 hover:text-yellow-700 hover:bg-yellow-500/10 border border-transparent hover:border-yellow-500/40 transition-all duration-300 cursor-pointer"
-                  whileHover={{ y: -2 }}
-                >
-                  {item}
-                </motion.button>
-              ))}
+              {["Home", "Skills", "Resume", "Achievements", "Projects", "Contact"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    onClick={() =>
+                      navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)
+                    }
+                    className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-gray-700 hover:text-yellow-700 hover:bg-yellow-500/10 border border-transparent hover:border-yellow-500/40 transition-all duration-300 cursor-pointer"
+                  >
+                    {item}
+                  </button>
+                ),
+              )}
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-16">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-5xl sm:text-7xl font-bold font-mono text-center mb-16 text-yellow-700"
-        >
+        <h1 className="text-5xl sm:text-7xl font-bold font-mono text-center mb-16 text-yellow-700">
           ACHIEVEMENTS_
-        </motion.h1>
+        </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {achievements.map((achievement, index) => {
+          {achievements.map((achievement) => {
             const Icon = achievement.icon;
             return (
-              <motion.div
+              <div
                 key={achievement.title}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, y: -4 }}
                 className="border border-yellow-500/30 bg-white p-8 hover:border-yellow-600/40 transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-start mb-4">
@@ -129,7 +113,7 @@ export default function Achievements() {
                 <p className="text-gray-800 font-mono text-sm leading-relaxed">
                   {achievement.description}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
         </div>
