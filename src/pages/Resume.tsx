@@ -101,7 +101,7 @@ export default function Resume() {
             <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
               <h3 className="text-xl font-mono font-bold text-green-400">HSC</h3>
               <p className="text-cyan-400 font-mono text-sm mb-2">Erode Hindu Kalvi Nilayam • Erode • 2022 - 2024</p>
-              <p className="text-gray-400 font-mono text-sm">Higher Secondary Certificate</p>
+              <p className="text-gray-400 font-mono text-sm">Higher Secondary Certificate • Score: 70%</p>
             </div>
 
             <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
