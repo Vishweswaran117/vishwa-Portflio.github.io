@@ -23,7 +23,7 @@ export default function Home() {
     linkedin: "https://www.linkedin.com/in/vishweswaran-r-809226301/",
     email: "mailto:iamvishwa117@gmail.com",
     instagram: "https://www.instagram.com/xz_vishwa_xz",
-    discord: "#",
+    discord: "https://discord.com/users/vishwagamer_",
   } as const;
 
   useEffect(() => {
