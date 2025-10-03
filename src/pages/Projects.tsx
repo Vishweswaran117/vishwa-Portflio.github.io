@@ -7,7 +7,7 @@ const projects = [
     description:
       "Cyberpunk-themed personal portfolio showcasing skills, achievements, projects, and contact with smooth animations.",
     tech: ["React", "Vite", "Tailwind", "Framer Motion", "Shadcn UI", "Convex"],
-    image: "/logo.png",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
     github: "https://github.com/Vishweswaran117",
     live: "#",
   },
