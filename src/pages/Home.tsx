@@ -12,10 +12,17 @@ export default function Home() {
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
+  // Add: flip orientation state
+  const [faceRight, setFaceRight] = useState<boolean>(false);
+
   // Load saved photo on mount
   useEffect(() => {
     const saved = localStorage.getItem("profilePhoto");
     if (saved) setPhotoUrl(saved);
+
+    // Load saved flip preference
+    const savedFlip = localStorage.getItem("profilePhotoFlip");
+    if (savedFlip !== null) setFaceRight(savedFlip === "true");
   }, []);
 
   const roles = [
@@ -48,6 +55,12 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [text, roleIndex, isDeleting]);
 
+  // Add: setter to persist flip
+  const setFlip = (v: boolean) => {
+    setFaceRight(v);
+    localStorage.setItem("profilePhotoFlip", v ? "true" : "false");
+  };
+
   // Add: handlers for upload and remove
   const handleChooseFile = () => {
     fileInputRef.current?.click();
@@ -70,6 +83,7 @@ export default function Home() {
   const handleRemovePhoto = () => {
     setPhotoUrl(null);
     localStorage.removeItem("profilePhoto");
+    // Optional: keep their flip preference; no change here
   };
 
   return (
@@ -167,7 +181,8 @@ export default function Home() {
                 <img
                   src={photoUrl}
                   alt="Profile"
-                  className="w-full h-full object-cover opacity-90"
+                  // Apply flip when facing right
+                  className={`w-full h-full object-cover opacity-90 transition-transform duration-300 ${faceRight ? "-scale-x-100" : ""}`}
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
@@ -177,9 +192,11 @@ export default function Home() {
                 </div>
               )}
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-cyan-500/10 via-pink-500/10 to-green-400/10" />
+              {/* Extra subtle inner glow ring */}
+              <div className="pointer-events-none absolute inset-2 rounded-md ring-1 ring-cyan-500/30" />
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <input
                 ref={fileInputRef}
                 type="file"
@@ -194,20 +211,36 @@ export default function Home() {
               >
                 {photoUrl ? "Change Photo" : "Upload Photo"}
               </Button>
+
               {photoUrl && (
-                <Button
-                  variant="outline"
-                  className="border-pink-500/50 text-pink-500 hover:bg-pink-500/10 font-mono cursor-pointer"
-                  onClick={handleRemovePhoto}
-                >
-                  Remove
-                </Button>
+                <>
+                  <Button
+                    variant="outline"
+                    className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono cursor-pointer"
+                    onClick={() => setFlip(true)}
+                  >
+                    Face Right
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono cursor-pointer"
+                    onClick={() => setFlip(false)}
+                  >
+                    Face Left
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-pink-500/50 text-pink-500 hover:bg-pink-500/10 font-mono cursor-pointer"
+                    onClick={handleRemovePhoto}
+                  >
+                    Remove
+                  </Button>
+                </>
               )}
             </div>
 
             <p className="text-xs sm:text-sm text-green-400/80 font-mono text-center max-w-md">
-              Tip: For best results, use a square image (e.g., 800x800). You can
-              upload any photo and it will be saved locally on this device.
+              Tip: For best results, use a square image (e.g., 800x800). Your photo and orientation are saved locally on this device.
             </p>
           </div>
         </motion.div>
