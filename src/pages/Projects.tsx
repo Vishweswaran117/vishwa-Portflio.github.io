@@ -15,7 +15,7 @@ const projects = [
     title: "AI Resume Sorter",
     description:
       "Candidates upload resumes; the system extracts details and filters them via a sorting algorithm. An admin page lists all resumes for review and selection.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "NLP"],
+    tech: ["TSX", "JSON", "HTML", "CSS", "JavaScript", "MongoDB"],
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
     github: "https://github.com/Vishweswaran117/ai-resume-sorter.github.io.git",
