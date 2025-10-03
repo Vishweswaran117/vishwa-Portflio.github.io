@@ -22,7 +22,7 @@ export default function Home() {
     github: "https://github.com/Vishweswaran117",
     linkedin: "https://www.linkedin.com/in/vishweswaran-r-809226301/",
     email: "mailto:iamvishwa117@gmail.com",
-    instagram: "#",
+    instagram: "https://www.instagram.com/xz_vishwa_xz",
     discord: "#",
   } as const;
 
