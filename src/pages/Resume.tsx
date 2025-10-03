@@ -127,7 +127,7 @@ export default function Resume() {
 
           <div className="mt-6">
             <a
-              href="https://drive.google.com/drive/folders/13fam3RErdqk5kMPvYJx1o0qWo9ikMvEj?usp=drive_link"
+              href="https://drive.google.com/drive/folders/13fam3RErdqk5kMPvYJx1o0qWo9ikMvEj?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white font-mono border-2 border-yellow-600 px-4 py-2 cursor-pointer"
