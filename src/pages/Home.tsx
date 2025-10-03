@@ -102,7 +102,7 @@ export default function Home() {
               </h1>
             </div>
 
-            <div className="h-20 flex items-center">
+            <div className="h-24 flex items-center mt-4 mb-8">
               <div className="text-2xl sm:text-4xl md:text-5xl font-mono text-gray-800">
                 {text}
                 <span className="animate-pulse">|</span>
