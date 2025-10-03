@@ -1,13 +1,23 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { Button } from "@/components/ui/button";
+import { useRef } from "react";
 
 export default function Home() {
   const navigate = useNavigate();
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  
+  const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Load saved photo on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("profilePhoto");
+    if (saved) setPhotoUrl(saved);
+  }, []);
+
   const roles = [
     "Web Designer",
     "Business Analyst",
@@ -37,6 +47,30 @@ export default function Home() {
 
     return () => clearTimeout(timeout);
   }, [text, roleIndex, isDeleting]);
+
+  // Add: handlers for upload and remove
+  const handleChooseFile = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (!file.type.startsWith("image/")) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataUrl = reader.result as string;
+      setPhotoUrl(dataUrl);
+      localStorage.setItem("profilePhoto", dataUrl);
+    };
+    reader.readAsDataURL(file);
+    e.target.value = "";
+  };
+
+  const handleRemovePhoto = () => {
+    setPhotoUrl(null);
+    localStorage.removeItem("profilePhoto");
+  };
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -111,6 +145,72 @@ export default function Home() {
             <div className="w-20 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent" />
           </motion.div>
         </div>
+      </div>
+
+      {/* Profile Photo Section */}
+      <div className="relative z-10 px-4 mt-2">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="mx-auto max-w-4xl flex flex-col items-center"
+        >
+          <div className="flex flex-col items-center gap-4">
+            <div
+              className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-lg border border-cyan-500/50 bg-black/60 neon-glow cyber-card overflow-hidden"
+              style={{
+                clipPath:
+                  "polygon(8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%, 0% 8%)",
+              }}
+            >
+              {photoUrl ? (
+                <img
+                  src={photoUrl}
+                  alt="Profile"
+                  className="w-full h-full object-cover opacity-90"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-cyan-400 font-mono text-xs sm:text-sm opacity-80">
+                    UPLOAD YOUR PHOTO
+                  </span>
+                </div>
+              )}
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-cyan-500/10 via-pink-500/10 to-green-400/10" />
+            </div>
+
+            <div className="flex gap-3">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+              <Button
+                variant="outline"
+                className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono cursor-pointer"
+                onClick={handleChooseFile}
+              >
+                {photoUrl ? "Change Photo" : "Upload Photo"}
+              </Button>
+              {photoUrl && (
+                <Button
+                  variant="outline"
+                  className="border-pink-500/50 text-pink-500 hover:bg-pink-500/10 font-mono cursor-pointer"
+                  onClick={handleRemovePhoto}
+                >
+                  Remove
+                </Button>
+              )}
+            </div>
+
+            <p className="text-xs sm:text-sm text-green-400/80 font-mono text-center max-w-md">
+              Tip: For best results, use a square image (e.g., 800x800). You can
+              upload any photo and it will be saved locally on this device.
+            </p>
+          </div>
+        </motion.div>
       </div>
 
       {/* Corner Decorations */}
