@@ -61,7 +61,8 @@ export default function Home() {
       {/* Navigation */}
       <nav className="relative z-10 border-b border-cyan-500/30 bg-black/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          {/* Make header container relative to position a centered title */}
+          <div className="relative flex items-center justify-between h-16">
             <motion.button
               onClick={() => navigate("/")}
               className="text-cyan-400 font-bold text-xl font-mono glitch-text cursor-pointer"
@@ -83,6 +84,18 @@ export default function Home() {
                 </motion.button>
               ))}
             </div>
+
+            {/* Centered Title */}
+            <motion.div
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="pointer-events-none absolute left-1/2 -translate-x-1/2"
+            >
+              <span className="text-xs sm:text-sm md:text-base font-mono tracking-[0.2em] text-green-400 neon-text">
+                PORTFOLIO
+              </span>
+            </motion.div>
           </div>
         </div>
       </nav>
