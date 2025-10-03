@@ -7,7 +7,6 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -16,7 +15,7 @@ export default function Contact() {
     e.preventDefault();
     // Keep simple UX: mark submitted without JS effects
     setSubmitted(true);
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({ name: "", email: "", message: "" });
     setTimeout(() => setSubmitted(false), 3000);
   };
 
@@ -77,15 +76,6 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 px-3 py-2"
                   required
-                />
-              </div>
-              <div>
-                <input
-                  type="tel"
-                  placeholder="PHONE (optional)"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 px-3 py-2"
                 />
               </div>
               <div>
