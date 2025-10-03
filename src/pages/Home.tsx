@@ -1,28 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const navigate = useNavigate();
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [photoUrl, setPhotoUrl] = useState<string | null>(DEFAULT_PHOTO_URL);
-
-  // Add: flip orientation state
-  const [faceRight, setFaceRight] = useState<boolean>(true);
-
-  // Update: only load saved flip preference (default to right if none saved)
-  useEffect(() => {
-    const savedFlip = localStorage.getItem("profilePhotoFlip");
-    if (savedFlip !== null) {
-      setFaceRight(savedFlip === "true");
-    } else {
-      localStorage.setItem("profilePhotoFlip", "true");
-      setFaceRight(true);
-    }
-  }, []);
 
   const roles = [
     "Web Designer",
@@ -53,12 +37,6 @@ export default function Home() {
 
     return () => clearTimeout(timeout);
   }, [text, roleIndex, isDeleting]);
-
-  // Add: setter to persist flip
-  const setFlip = (v: boolean) => {
-    setFaceRight(v);
-    localStorage.setItem("profilePhotoFlip", v ? "true" : "false");
-  };
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -135,67 +113,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Profile Photo Section */}
-      <div className="relative z-10 px-4 mt-2">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="mx-auto max-w-4xl flex flex-col items-center"
-        >
-          <div className="flex flex-col items-center gap-4">
-            <div
-              className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-lg border border-cyan-500/50 bg-black/60 neon-glow cyber-card overflow-hidden"
-              style={{
-                clipPath:
-                  "polygon(8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%, 0% 8%)",
-              }}
-            >
-              {photoUrl ? (
-                <img
-                  src={photoUrl}
-                  alt="Profile"
-                  className={`w-full h-full object-cover opacity-90 transition-transform duration-300 ${faceRight ? "-scale-x-100" : ""}`}
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-cyan-400 font-mono text-xs sm:text-sm opacity-80">
-                    NO PHOTO
-                  </span>
-                </div>
-              )}
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-cyan-500/10 via-pink-500/10 to-green-400/10" />
-              <div className="pointer-events-none absolute inset-2 rounded-md ring-1 ring-cyan-500/30" />
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {photoUrl && (
-                <>
-                  <Button
-                    variant="outline"
-                    className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono cursor-pointer"
-                    onClick={() => setFlip(true)}
-                  >
-                    Face Right
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono cursor-pointer"
-                    onClick={() => setFlip(false)}
-                  >
-                    Face Left
-                  </Button>
-                </>
-              )}
-            </div>
-
-            <p className="text-xs sm:text-sm text-green-400/80 font-mono text-center max-w-md">
-              Your image is fixed on this page. Orientation preference is saved locally.
-            </p>
-          </div>
-        </motion.div>
-      </div>
-
       {/* Corner Decorations */}
       <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cyan-500/50" />
       <div className="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-pink-500/50" />
@@ -204,5 +121,3 @@ export default function Home() {
     </div>
   );
 }
-
-const DEFAULT_PHOTO_URL = "https://harmless-tapir-303.convex.cloud/api/storage/bf08bb4b-9c69-4359-a806-23c2ca196c47";
