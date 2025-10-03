@@ -21,7 +21,7 @@ export default function Home() {
   const socialLinks = {
     github: "https://github.com/Vishweswaran117",
     linkedin: "https://www.linkedin.com/in/vishweswaran-r-809226301/",
-    email: "mailto:your@email.com",
+    email: "mailto:iamvishwa117@gmail.com",
     instagram: "#",
     discord: "#",
   } as const;
