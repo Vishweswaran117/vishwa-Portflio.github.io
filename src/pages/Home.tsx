@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { Github, Linkedin, Mail, Instagram, MessageCircle } from "lucide-react";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -19,6 +20,15 @@ export default function Home() {
   // Add a fixed profile image URL
   const PROFILE_URL =
     "https://harmless-tapir-303.convex.cloud/api/storage/bf08bb4b-9c69-4359-a806-23c2ca196c47";
+
+  // Add your social links here when ready
+  const socialLinks = {
+    github: "#",
+    linkedin: "#",
+    email: "mailto:your@email.com",
+    instagram: "#",
+    discord: "#",
+  } as const;
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -143,6 +153,50 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+
+      {/* Footer with social icons */}
+      <footer className="relative z-10 border-t border-cyan-500/30 bg-black/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+          <div className="text-xs sm:text-sm font-mono text-cyan-400">CONNECT_</div>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <motion.a
+              href={socialLinks.github}
+              whileHover={{ scale: 1.15, rotate: 2 }}
+              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+            >
+              <Github className="w-5 h-5 text-cyan-400" />
+            </motion.a>
+            <motion.a
+              href={socialLinks.linkedin}
+              whileHover={{ scale: 1.15, rotate: 2 }}
+              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+            >
+              <Linkedin className="w-5 h-5 text-cyan-400" />
+            </motion.a>
+            <motion.a
+              href={socialLinks.email}
+              whileHover={{ scale: 1.15, rotate: -2 }}
+              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+            >
+              <Mail className="w-5 h-5 text-cyan-400" />
+            </motion.a>
+            <motion.a
+              href={socialLinks.instagram}
+              whileHover={{ scale: 1.15, rotate: -2 }}
+              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+            >
+              <Instagram className="w-5 h-5 text-cyan-400" />
+            </motion.a>
+            <motion.a
+              href={socialLinks.discord}
+              whileHover={{ scale: 1.15, rotate: 2 }}
+              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+            >
+              <MessageCircle className="w-5 h-5 text-cyan-400" />
+            </motion.a>
+          </div>
+        </div>
+      </footer>
 
       {/* Corner Decorations */}
       <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cyan-500/50" />
