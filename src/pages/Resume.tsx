@@ -100,7 +100,7 @@ export default function Resume() {
 
             <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
               <h3 className="text-xl font-mono font-bold text-green-400">SSLC</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">Erode Hindu Kalvi Nilayam • Erode</p>
+              <p className="text-cyan-400 font-mono text-sm mb-2">Erode Hindu Kalvi Nilayam • Erode • 2022 - 2023</p>
               <p className="text-gray-400 font-mono text-sm">Score: 75%</p>
             </div>
           </div>
