@@ -116,7 +116,7 @@ export default function Home() {
               </p>
               <p className="text-sm sm:text-base font-mono text-gray-700 leading-relaxed">
                 Recently, I worked as a Data Analyst Intern at Placemantra (Bangalore), focusing on Excel, Power BI, and Python for 
-                cleaning, dashboards, and insights. I'm also passionate about programming, problem solving, and e‑sports.
+                cleaning, dashboards, and insights. I'm also passionate about programming, problem solving, and using my free time usefully.
               </p>
               <ul className="text-sm font-mono text-gray-800 space-y-1">
                 <li><span className="text-yellow-700 mr-2">▹</span>Web: HTML, CSS, JavaScript, React</li>
