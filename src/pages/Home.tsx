@@ -84,23 +84,28 @@ export default function Home() {
                 </motion.button>
               ))}
             </div>
-
-            {/* Centered Title */}
-            <motion.div
-              initial={{ opacity: 0, y: -4 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="pointer-events-none absolute left-1/2 -translate-x-1/2"
-            >
-              <span className="text-sm sm:text-base md:text-lg font-mono tracking-[0.2em] text-green-400 neon-text">
-                PORTFOLIO
-              </span>
-            </motion.div>
           </div>
         </div>
         {/* Decorative neon underline */}
         <div className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-0.5 bg-gradient-to-r from-cyan-500 via-pink-500 to-green-400 opacity-80" />
       </nav>
+
+      {/* NEW: Title banner below navbar */}
+      <div className="relative z-10 bg-black/85 border-b border-cyan-500/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="text-center"
+          >
+            <span className="text-2xl sm:text-3xl md:text-4xl font-mono tracking-[0.25em] text-green-400 neon-text">
+              PORTFOLIO
+            </span>
+          </motion.div>
+        </div>
+        <div className="pointer-events-none h-0.5 bg-gradient-to-r from-cyan-500 via-pink-500 to-green-400 opacity-80" />
+      </div>
 
       {/* Hero Section: text + image */}
       <div className="relative z-10 min-h-[calc(100vh-4rem)] px-4 flex items-center">
