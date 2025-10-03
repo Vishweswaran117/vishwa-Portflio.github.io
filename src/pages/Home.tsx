@@ -53,19 +53,15 @@ export default function Home() {
   }, [text, roleIndex, isDeleting]);
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute inset-0 bg-scanlines opacity-10" />
-      
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Navigation */}
-      <nav className="relative z-10 border-b border-cyan-500/50 bg-black/90 backdrop-blur-sm">
+      <nav className="relative z-10 border-b border-yellow-500/30 bg-white/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Make header container relative to position a centered title */}
           <div className="relative flex items-center justify-between h-20">
             <motion.button
               onClick={() => navigate("/")}
-              className="text-cyan-400 font-bold text-xl font-mono glitch-text cursor-pointer"
+              className="text-yellow-700 font-bold text-xl font-mono cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -77,7 +73,7 @@ export default function Home() {
                 <motion.button
                   key={item}
                   onClick={() => navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
-                  className="px-3 sm:px-5 py-3 text-sm md:text-base font-mono text-cyan-400 hover:text-pink-500 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/50 transition-all duration-300 neon-glow cursor-pointer"
+                  className="px-3 sm:px-5 py-3 text-sm md:text-base font-mono text-gray-700 hover:text-yellow-700 hover:bg-yellow-500/10 border border-transparent hover:border-yellow-500/40 transition-all duration-300 cursor-pointer"
                   whileHover={{ y: -2 }}
                 >
                   {item}
@@ -86,12 +82,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* Decorative neon underline */}
-        <div className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-0.5 bg-gradient-to-r from-cyan-500 via-pink-500 to-green-400 opacity-80" />
+        {/* Decorative underline adjusted to gold */}
+        <div className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-0.5 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 opacity-70" />
       </nav>
 
-      {/* NEW: Title banner below navbar */}
-      <div className="relative z-10 bg-black/85 border-b border-cyan-500/30">
+      {/* Title banner below navbar */}
+      <div className="relative z-10 bg-white border-b border-yellow-500/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <motion.div
             initial={{ opacity: 0, y: -6 }}
@@ -99,12 +95,12 @@ export default function Home() {
             transition={{ duration: 0.4 }}
             className="text-center"
           >
-            <span className="text-2xl sm:text-3xl md:text-4xl font-mono tracking-[0.25em] text-green-400 neon-text">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-mono tracking-[0.25em] text-yellow-700">
               PORTFOLIO
             </span>
           </motion.div>
         </div>
-        <div className="pointer-events-none h-0.5 bg-gradient-to-r from-cyan-500 via-pink-500 to-green-400 opacity-80" />
+        <div className="pointer-events-none h-0.5 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 opacity-70" />
       </div>
 
       {/* Hero Section: text + image */}
@@ -118,8 +114,8 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-mono mb-8 leading-[0.95]">
-                <span className="text-cyan-400 glitch-text">I'M</span>{" "}
-                <span className="text-pink-500 glitch-text-alt">VISHWESWARAN</span>
+                <span className="text-yellow-700">I'M</span>{" "}
+                <span className="text-yellow-600">VISHWESWARAN</span>
               </h1>
             </motion.div>
 
@@ -129,7 +125,7 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="h-20 flex items-center"
             >
-              <div className="text-2xl sm:text-4xl md:text-5xl font-mono text-green-400 neon-text">
+              <div className="text-2xl sm:text-4xl md:text-5xl font-mono text-gray-800">
                 {text}
                 <span className="animate-pulse">|</span>
               </div>
@@ -142,9 +138,9 @@ export default function Home() {
               transition={{ delay: 1, duration: 0.8 }}
               className="mt-12 hidden md:flex space-x-4"
             >
-              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-pink-500 to-transparent" />
-              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent" />
+              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent" />
+              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent" />
+              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-yellow-700 to-transparent" />
             </motion.div>
           </div>
 
@@ -155,19 +151,16 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="justify-self-center md:justify-self-end w-full max-w-sm"
           >
-            <div className="relative cyber-card border border-cyan-500/40 bg-black/60 backdrop-blur-sm p-3">
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -inset-1 bg-gradient-to-tr from-cyan-500/20 via-pink-500/10 to-green-400/20 blur-2xl" />
-              </div>
+            <div className="relative border border-yellow-500/40 bg-white p-3">
               <div className="relative overflow-hidden aspect-[4/5]">
                 <img
                   src={PROFILE_URL}
                   alt="Vishweswaran portrait"
-                  className="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 border border-cyan-500/30 pointer-events-none" />
-                <div className="absolute top-3 left-3 text-xs font-mono text-cyan-400">PROFILE_</div>
-                <div className="absolute bottom-3 right-3 text-xs font-mono text-pink-500">LIVE</div>
+                <div className="absolute inset-0 border border-yellow-500/30 pointer-events-none" />
+                <div className="absolute top-3 left-3 text-xs font-mono text-yellow-700">PROFILE_</div>
+                <div className="absolute bottom-3 right-3 text-xs font-mono text-yellow-600">LIVE</div>
               </div>
             </div>
           </motion.div>
@@ -175,54 +168,48 @@ export default function Home() {
       </div>
 
       {/* Footer with social icons */}
-      <footer className="relative z-10 border-t border-cyan-500/30 bg-black/80 backdrop-blur-sm">
+      <footer className="relative z-10 border-t border-yellow-500/30 bg-white/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
-          <div className="text-xs sm:text-sm font-mono text-cyan-400">CONNECT_</div>
+          <div className="text-xs sm:text-sm font-mono text-gray-600">CONNECT_</div>
           <div className="flex items-center gap-3 sm:gap-4">
             <motion.a
               href={socialLinks.github}
               whileHover={{ scale: 1.15, rotate: 2 }}
-              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+              className="p-2 border border-yellow-500/40 bg-yellow-50 hover:border-yellow-600/50 hover:bg-yellow-100 transition-all cursor-pointer"
             >
-              <Github className="w-5 h-5 text-cyan-400" />
+              <Github className="w-5 h-5 text-yellow-700" />
             </motion.a>
             <motion.a
               href={socialLinks.linkedin}
               whileHover={{ scale: 1.15, rotate: 2 }}
-              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+              className="p-2 border border-yellow-500/40 bg-yellow-50 hover:border-yellow-600/50 hover:bg-yellow-100 transition-all cursor-pointer"
             >
-              <Linkedin className="w-5 h-5 text-cyan-400" />
+              <Linkedin className="w-5 h-5 text-yellow-700" />
             </motion.a>
             <motion.a
               href={socialLinks.email}
               whileHover={{ scale: 1.15, rotate: -2 }}
-              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+              className="p-2 border border-yellow-500/40 bg-yellow-50 hover:border-yellow-600/50 hover:bg-yellow-100 transition-all cursor-pointer"
             >
-              <Mail className="w-5 h-5 text-cyan-400" />
+              <Mail className="w-5 h-5 text-yellow-700" />
             </motion.a>
             <motion.a
               href={socialLinks.instagram}
               whileHover={{ scale: 1.15, rotate: -2 }}
-              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+              className="p-2 border border-yellow-500/40 bg-yellow-50 hover:border-yellow-600/50 hover:bg-yellow-100 transition-all cursor-pointer"
             >
-              <Instagram className="w-5 h-5 text-cyan-400" />
+              <Instagram className="w-5 h-5 text-yellow-700" />
             </motion.a>
             <motion.a
               href={socialLinks.discord}
               whileHover={{ scale: 1.15, rotate: 2 }}
-              className="p-2 border border-cyan-500/40 bg-cyan-500/10 hover:border-pink-500/50 hover:bg-pink-500/10 transition-all cursor-pointer"
+              className="p-2 border border-yellow-500/40 bg-yellow-50 hover:border-yellow-600/50 hover:bg-yellow-100 transition-all cursor-pointer"
             >
-              <MessageCircle className="w-5 h-5 text-cyan-400" />
+              <MessageCircle className="w-5 h-5 text-yellow-700" />
             </motion.a>
           </div>
         </div>
       </footer>
-
-      {/* Corner Decorations */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cyan-500/50" />
-      <div className="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-pink-500/50" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-green-400/50" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-cyan-500/50" />
     </div>
   );
 }

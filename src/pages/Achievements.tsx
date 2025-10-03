@@ -63,17 +63,15 @@ export default function Achievements() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute inset-0 bg-scanlines opacity-10" />
+    <div className="min-h-screen bg-white relative overflow-hidden">
       
       {/* Navigation */}
-      <nav className="relative z-10 border-b border-cyan-500/30 bg-black/80 backdrop-blur-sm">
+      <nav className="relative z-10 border-b border-yellow-500/30 bg-white/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <motion.button
               onClick={() => navigate("/")}
-              className="text-cyan-400 font-bold text-xl font-mono glitch-text cursor-pointer"
+              className="text-yellow-700 font-bold text-xl font-mono cursor-pointer"
               whileHover={{ scale: 1.05 }}
             >
               VISHWA
@@ -84,7 +82,7 @@ export default function Achievements() {
                 <motion.button
                   key={item}
                   onClick={() => navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
-                  className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-cyan-400 hover:text-pink-500 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/50 transition-all duration-300 cursor-pointer"
+                  className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-gray-700 hover:text-yellow-700 hover:bg-yellow-500/10 border border-transparent hover:border-yellow-500/40 transition-all duration-300 cursor-pointer"
                   whileHover={{ y: -2 }}
                 >
                   {item}
@@ -100,7 +98,7 @@ export default function Achievements() {
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl sm:text-7xl font-bold font-mono text-center mb-16 text-cyan-400 glitch-text"
+          className="text-5xl sm:text-7xl font-bold font-mono text-center mb-16 text-yellow-700"
         >
           ACHIEVEMENTS_
         </motion.h1>
@@ -111,24 +109,24 @@ export default function Achievements() {
             return (
               <motion.div
                 key={achievement.title}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="cyber-card border border-cyan-500/30 bg-black/60 backdrop-blur-sm p-8 hover:border-pink-500/50 transition-all duration-300 cursor-pointer"
+                whileHover={{ scale: 1.02, y: -4 }}
+                className="border border-yellow-500/30 bg-white p-8 hover:border-yellow-600/40 transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-start mb-4">
-                  <div className="p-3 border border-cyan-500/50 bg-cyan-500/10 mr-4">
-                    <Icon className="w-8 h-8 text-cyan-400" />
+                  <div className="p-3 border border-yellow-500/40 bg-yellow-50 mr-4">
+                    <Icon className="w-8 h-8 text-yellow-700" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-mono font-bold text-pink-500 mb-2">
+                    <h3 className="text-2xl font-mono font-bold text-yellow-700 mb-2">
                       {achievement.title}
                     </h3>
-                    <p className="text-xs font-mono text-cyan-400 mb-3">{achievement.year}</p>
+                    <p className="text-xs font-mono text-gray-600 mb-3">{achievement.year}</p>
                   </div>
                 </div>
-                <p className="text-green-400 font-mono text-sm leading-relaxed">
+                <p className="text-gray-800 font-mono text-sm leading-relaxed">
                   {achievement.description}
                 </p>
               </motion.div>

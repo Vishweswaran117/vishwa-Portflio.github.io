@@ -7,17 +7,15 @@ export default function Resume() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute inset-0 bg-scanlines opacity-10" />
+    <div className="min-h-screen bg-white relative overflow-hidden">
       
       {/* Navigation */}
-      <nav className="relative z-10 border-b border-cyan-500/30 bg-black/80 backdrop-blur-sm">
+      <nav className="relative z-10 border-b border-yellow-500/30 bg-white/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <motion.button
               onClick={() => navigate("/")}
-              className="text-cyan-400 font-bold text-xl font-mono glitch-text cursor-pointer"
+              className="text-yellow-700 font-bold text-xl font-mono cursor-pointer"
               whileHover={{ scale: 1.05 }}
             >
               VISHWA
@@ -28,7 +26,7 @@ export default function Resume() {
                 <motion.button
                   key={item}
                   onClick={() => navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
-                  className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-cyan-400 hover:text-pink-500 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/50 transition-all duration-300 cursor-pointer"
+                  className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-gray-700 hover:text-yellow-700 hover:bg-yellow-500/10 border border-transparent hover:border-yellow-500/40 transition-all duration-300 cursor-pointer"
                   whileHover={{ y: -2 }}
                 >
                   {item}
@@ -46,10 +44,10 @@ export default function Resume() {
           animate={{ opacity: 1, y: 0 }}
           className="flex justify-between items-center mb-16"
         >
-          <h1 className="text-5xl sm:text-7xl font-bold font-mono text-cyan-400 glitch-text">
+          <h1 className="text-5xl sm:text-7xl font-bold font-mono text-yellow-700">
             RESUME_
           </h1>
-          <Button className="bg-pink-500 hover:bg-pink-600 text-black font-mono border-2 border-pink-500 neon-glow cursor-pointer">
+          <Button className="bg-yellow-600 hover:bg-yellow-700 text-white font-mono border-2 border-yellow-600 cursor-pointer">
             <Download className="w-4 h-4 mr-2" />
             DOWNLOAD
           </Button>
@@ -63,14 +61,14 @@ export default function Resume() {
           className="mb-12"
         >
           <div className="flex items-center mb-6">
-            <Briefcase className="w-6 h-6 text-cyan-400 mr-3" />
-            <h2 className="text-3xl font-mono font-bold text-pink-500">EXPERIENCE</h2>
+            <Briefcase className="w-6 h-6 text-yellow-700 mr-3" />
+            <h2 className="text-3xl font-mono font-bold text-yellow-700">EXPERIENCE</h2>
           </div>
-          <div className="space-y-6 border-l-2 border-cyan-500/30 pl-6">
-            <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
-              <h3 className="text-xl font-mono font-bold text-green-400">Data Analyst Intern</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">Placemantra • Internship • Bangalore</p>
-              <p className="text-gray-400 font-mono text-sm">
+          <div className="space-y-6 border-l-2 border-yellow-500/30 pl-6">
+            <div className="border border-yellow-500/30 bg-white p-6">
+              <h3 className="text-xl font-mono font-bold text-gray-900">Data Analyst Intern</h3>
+              <p className="text-gray-700 font-mono text-sm mb-2">Placemantra • Internship • Bangalore</p>
+              <p className="text-gray-700 font-mono text-sm">
                 Assisted in data cleaning, analysis, and reporting using Excel, Power BI, and Python
                 libraries. Built dashboards, performed exploratory analysis, and supported insights delivery.
               </p>
@@ -86,28 +84,28 @@ export default function Resume() {
           className="mb-12"
         >
           <div className="flex items-center mb-6">
-            <GraduationCap className="w-6 h-6 text-cyan-400 mr-3" />
-            <h2 className="text-3xl font-mono font-bold text-pink-500">EDUCATION</h2>
+            <GraduationCap className="w-6 h-6 text-yellow-700 mr-3" />
+            <h2 className="text-3xl font-mono font-bold text-yellow-700">EDUCATION</h2>
           </div>
-          <div className="space-y-6 border-l-2 border-cyan-500/30 pl-6">
-            <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
-              <h3 className="text-xl font-mono font-bold text-green-400">B.Sc Computer Science</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">VET Institute of Arts and Science • 2024 - 2027</p>
-              <p className="text-gray-400 font-mono text-sm">
+          <div className="space-y-6 border-l-2 border-yellow-500/30 pl-6">
+            <div className="border border-yellow-500/30 bg-white p-6">
+              <h3 className="text-xl font-mono font-bold text-gray-900">B.Sc Computer Science</h3>
+              <p className="text-gray-700 font-mono text-sm mb-2">VET Institute of Arts and Science • 2024 - 2027</p>
+              <p className="text-gray-700 font-mono text-sm">
                 Focus on core computer science, programming, data analysis, and modern web technologies.
               </p>
             </div>
 
-            <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
-              <h3 className="text-xl font-mono font-bold text-green-400">HSC</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">Erode Hindu Kalvi Nilayam • Erode • 2022 - 2024</p>
-              <p className="text-gray-400 font-mono text-sm">Higher Secondary Certificate • Score: 70%</p>
+            <div className="border border-yellow-500/30 bg-white p-6">
+              <h3 className="text-xl font-mono font-bold text-gray-900">HSC</h3>
+              <p className="text-gray-700 font-mono text-sm mb-2">Erode Hindu Kalvi Nilayam • Erode • 2022 - 2024</p>
+              <p className="text-gray-700 font-mono text-sm">Higher Secondary Certificate • Score: 70%</p>
             </div>
 
-            <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
-              <h3 className="text-xl font-mono font-bold text-green-400">SSLC</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">Erode Hindu Kalvi Nilayam • Erode • 2021 - 2022</p>
-              <p className="text-gray-400 font-mono text-sm">Secondary School Leaving Certificate • Score: 75%</p>
+            <div className="border border-yellow-500/30 bg-white p-6">
+              <h3 className="text-xl font-mono font-bold text-gray-900">SSLC</h3>
+              <p className="text-gray-700 font-mono text-sm mb-2">Erode Hindu Kalvi Nilayam • Erode • 2021 - 2022</p>
+              <p className="text-gray-700 font-mono text-sm">Secondary School Leaving Certificate • Score: 75%</p>
             </div>
           </div>
         </motion.section>
@@ -119,8 +117,8 @@ export default function Resume() {
           transition={{ delay: 0.6 }}
         >
           <div className="flex items-center mb-6">
-            <Award className="w-6 h-6 text-cyan-400 mr-3" />
-            <h2 className="text-3xl font-mono font-bold text-pink-500">CERTIFICATIONS</h2>
+            <Award className="w-6 h-6 text-yellow-700 mr-3" />
+            <h2 className="text-3xl font-mono font-bold text-yellow-700">CERTIFICATIONS</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
@@ -137,10 +135,10 @@ export default function Resume() {
             ].map((cert) => (
               <motion.div
                 key={cert}
-                whileHover={{ scale: 1.05 }}
-                className="cyber-card border border-cyan-500/30 bg-black/60 p-4 cursor-pointer"
+                whileHover={{ scale: 1.02 }}
+                className="border border-yellow-500/30 bg-white p-4 cursor-pointer"
               >
-                <p className="text-green-400 font-mono text-sm">▹ {cert}</p>
+                <p className="text-gray-800 font-mono text-sm">▹ {cert}</p>
               </motion.div>
             ))}
           </div>

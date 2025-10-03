@@ -51,17 +51,14 @@ export default function Skills() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute inset-0 bg-scanlines opacity-10" />
-      
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Navigation */}
-      <nav className="relative z-10 border-b border-cyan-500/30 bg-black/80 backdrop-blur-sm">
+      <nav className="relative z-10 border-b border-yellow-500/30 bg-white/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <motion.button
               onClick={() => navigate("/")}
-              className="text-cyan-400 font-bold text-xl font-mono glitch-text cursor-pointer"
+              className="text-yellow-700 font-bold text-xl font-mono cursor-pointer"
               whileHover={{ scale: 1.05 }}
             >
               VISHWA
@@ -72,7 +69,7 @@ export default function Skills() {
                 <motion.button
                   key={item}
                   onClick={() => navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
-                  className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-cyan-400 hover:text-pink-500 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/50 transition-all duration-300 cursor-pointer"
+                  className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-gray-700 hover:text-yellow-700 hover:bg-yellow-500/10 border border-transparent hover:border-yellow-500/40 transition-all duration-300 cursor-pointer"
                   whileHover={{ y: -2 }}
                 >
                   {item}
@@ -88,7 +85,7 @@ export default function Skills() {
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl sm:text-7xl font-bold font-mono text-center mb-16 text-cyan-400 glitch-text"
+          className="text-5xl sm:text-7xl font-bold font-mono text-center mb-16 text-yellow-700"
         >
           SKILLS_
         </motion.h1>
@@ -102,17 +99,17 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="border border-cyan-500/30 bg-black/60 backdrop-blur-sm p-6 hover:border-pink-500/50 transition-all duration-300 cyber-card cursor-pointer"
+                whileHover={{ scale: 1.03, y: -3 }}
+                className="border border-yellow-500/30 bg-white p-6 hover:border-yellow-600/40 transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-center mb-4">
-                  <Icon className="w-8 h-8 text-cyan-400 mr-3" />
-                  <h3 className="text-xl font-mono font-bold text-pink-500">{skill.category}</h3>
+                  <Icon className="w-8 h-8 text-yellow-700 mr-3" />
+                  <h3 className="text-xl font-mono font-bold text-yellow-700">{skill.category}</h3>
                 </div>
                 <ul className="space-y-2">
                   {skill.items.map((item) => (
-                    <li key={item} className="text-green-400 font-mono text-sm flex items-center">
-                      <span className="text-cyan-400 mr-2">▹</span>
+                    <li key={item} className="text-gray-700 font-mono text-sm flex items-center">
+                      <span className="text-yellow-700 mr-2">▹</span>
                       {item}
                     </li>
                   ))}
