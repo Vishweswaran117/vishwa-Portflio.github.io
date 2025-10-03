@@ -11,12 +11,17 @@ export default function Home() {
   const [photoUrl, setPhotoUrl] = useState<string | null>(DEFAULT_PHOTO_URL);
 
   // Add: flip orientation state
-  const [faceRight, setFaceRight] = useState<boolean>(false);
+  const [faceRight, setFaceRight] = useState<boolean>(true);
 
-  // Update: only load saved flip preference (no saved photo)
+  // Update: only load saved flip preference (default to right if none saved)
   useEffect(() => {
     const savedFlip = localStorage.getItem("profilePhotoFlip");
-    if (savedFlip !== null) setFaceRight(savedFlip === "true");
+    if (savedFlip !== null) {
+      setFaceRight(savedFlip === "true");
+    } else {
+      localStorage.setItem("profilePhotoFlip", "true");
+      setFaceRight(true);
+    }
   }, []);
 
   const roles = [
