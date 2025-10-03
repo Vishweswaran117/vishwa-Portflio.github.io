@@ -21,6 +21,16 @@ const projects = [
     github: "https://github.com/Vishweswaran117/ai-resume-sorter.github.io.git",
     live: "#",
   },
+  {
+    title: "Chillout Website",
+    description:
+      "Clone of the Chillout Theme Park, Perundurai website with a clean, responsive UI.",
+    tech: ["React", "Vite", "Tailwind"],
+    image:
+      "https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=800&h=600&fit=crop",
+    github: "https://github.com/Vishweswaran117",
+    live: "#",
+  },
 ];
 
 export default function Projects() {
