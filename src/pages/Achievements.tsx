@@ -1,36 +1,62 @@
 import { motion } from "framer-motion";
-import { Trophy, Star, Target, Zap } from "lucide-react";
+import { Trophy, Star, Target, Zap, Award, Medal, Users, Code } from "lucide-react";
 import { useNavigate } from "react-router";
 
 const achievements = [
+  // Academic Excellence Awards
   {
-    icon: Trophy,
-    title: "E-Sports Champion",
-    description: "Won regional championship in competitive gaming",
-    year: "2023",
-    color: "cyan"
+    icon: Award,
+    title: "Academic Excellence Awards",
+    description:
+      "VET Institute of Arts & Science — Class Topper (Rank 1, Even Semester); First Position in Allied Mathematics; Coding Excellence Award",
+    year: "2024–2025",
+    color: "cyan",
   },
+  // Eureka 2025 Ideathon
   {
-    icon: Star,
-    title: "Best Developer Award",
-    description: "Recognized for outstanding contribution to company projects",
-    year: "2022",
-    color: "pink"
+    icon: Medal,
+    title: "2nd Place – Eureka 2025 Ideathon",
+    description:
+      "Presented \"HIRE ME\" with market research, key features, and go‑to‑market strategy; showcased innovation, teamwork, and problem‑solving",
+    year: "2025",
+    color: "pink",
   },
-  {
-    icon: Target,
-    title: "Project Excellence",
-    description: "Successfully delivered 15+ projects on time and within budget",
-    year: "2021-2023",
-    color: "green"
-  },
+  // HIBOT 2025 Debugging Competition
   {
     icon: Zap,
-    title: "Innovation Award",
-    description: "Created innovative solutions that improved efficiency by 40%",
-    year: "2022",
-    color: "purple"
-  }
+    title: "2nd Prize – Debugging Competition (HIBOT 2025)",
+    description:
+      "₹1500 cash award, certificate, and shield at Hindustan College of Arts & Science; recognized for debugging skills, coding accuracy, and problem‑solving under pressure",
+    year: "2025",
+    color: "green",
+  },
+  // Joint Secretary – Coding Club (2024–2025)
+  {
+    icon: Users,
+    title: "Joint Secretary – Coding Club",
+    description:
+      "VET Institute of Arts & Science — supporting coding initiatives, peer learning sessions, and technical events; fostering innovation and collaboration",
+    year: "2024–2025",
+    color: "purple",
+  },
+  // Joint Secretary – School of Computing (2025–2026)
+  {
+    icon: Users,
+    title: "Joint Secretary – School of Computing",
+    description:
+      "VET Institute of Arts & Science — contributing to leadership initiatives, academic activities, and student engagement",
+    year: "2025–2026",
+    color: "cyan",
+  },
+  // Secretary – Coding Club (2025–2026)
+  {
+    icon: Code,
+    title: "Secretary – Coding Club",
+    description:
+      "Driving technical workshops, coding challenges, and collaborative learning; promoting creativity, teamwork, and programming excellence",
+    year: "2025–2026",
+    color: "pink",
+  },
 ];
 
 export default function Achievements() {
