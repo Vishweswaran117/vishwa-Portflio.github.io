@@ -18,7 +18,7 @@ const skills = [
   {
     category: "Data & Analytics",
     icon: TrendingUp,
-    items: ["Advanced Excel", "Power BI"],
+    items: ["Advanced Excel", "Power BI", "Statistics", "Linear Algebra", "Matplotlib"],
     color: "pink",
   },
   {
