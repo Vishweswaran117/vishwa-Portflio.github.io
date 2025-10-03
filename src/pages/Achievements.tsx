@@ -135,30 +135,6 @@ export default function Achievements() {
             );
           })}
         </div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {[
-            { label: "Projects", value: "50+" },
-            { label: "Awards", value: "12" },
-            { label: "Clients", value: "30+" },
-            { label: "Years", value: "5+" }
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              whileHover={{ scale: 1.1 }}
-              className="text-center border border-cyan-500/30 bg-black/60 p-6 cyber-card cursor-pointer"
-            >
-              <div className="text-4xl font-bold font-mono text-pink-500 mb-2">{stat.value}</div>
-              <div className="text-sm font-mono text-cyan-400">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </div>
   );
