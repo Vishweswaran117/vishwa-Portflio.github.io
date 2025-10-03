@@ -68,17 +68,11 @@ export default function Resume() {
           </div>
           <div className="space-y-6 border-l-2 border-cyan-500/30 pl-6">
             <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
-              <h3 className="text-xl font-mono font-bold text-green-400">Senior Developer</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">Tech Corp • 2022 - Present</p>
+              <h3 className="text-xl font-mono font-bold text-green-400">Data Analyst Intern</h3>
+              <p className="text-cyan-400 font-mono text-sm mb-2">Placemantra • Internship</p>
               <p className="text-gray-400 font-mono text-sm">
-                Leading development teams in creating cutting-edge web applications using modern technologies.
-              </p>
-            </div>
-            <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
-              <h3 className="text-xl font-mono font-bold text-green-400">Business Analyst</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">Innovation Labs • 2020 - 2022</p>
-              <p className="text-gray-400 font-mono text-sm">
-                Analyzed business requirements and translated them into technical specifications.
+                Assisted in data cleaning, analysis, and reporting using Excel, Power BI, and Python
+                libraries. Built dashboards, performed exploratory analysis, and supported insights delivery.
               </p>
             </div>
           </div>
@@ -97,10 +91,10 @@ export default function Resume() {
           </div>
           <div className="space-y-6 border-l-2 border-cyan-500/30 pl-6">
             <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
-              <h3 className="text-xl font-mono font-bold text-green-400">Bachelor of Computer Science</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">Tech University • 2016 - 2020</p>
+              <h3 className="text-xl font-mono font-bold text-green-400">B.Sc Computer Science</h3>
+              <p className="text-cyan-400 font-mono text-sm mb-2">VET Institute of Arts and Science • Studying</p>
               <p className="text-gray-400 font-mono text-sm">
-                Graduated with honors, specializing in software engineering and data analysis.
+                Focus on core computer science, programming, data analysis, and modern web technologies.
               </p>
             </div>
           </div>
