@@ -5,37 +5,24 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with real-time inventory management",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+    title: "Vishwa Cyberport Portfolio",
+    description:
+      "Cyberpunk-themed personal portfolio showcasing skills, achievements, projects, and contact with smooth animations.",
+    tech: ["React", "Vite", "Tailwind", "Framer Motion", "Shadcn UI", "Convex"],
+    image: "/logo_bg.png",
     github: "#",
-    live: "#"
+    live: "#",
   },
   {
-    title: "Analytics Dashboard",
-    description: "Business intelligence dashboard with advanced data visualization",
-    tech: ["TypeScript", "D3.js", "PostgreSQL", "Express"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    title: "AI Resume Sorter",
+    description:
+      "Candidates upload resumes; the system extracts details and filters them via a sorting algorithm. An admin page lists all resumes for review and selection.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "NLP"],
+    image:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
     github: "#",
-    live: "#"
+    live: "#",
   },
-  {
-    title: "Gaming Tournament Platform",
-    description: "Platform for organizing and managing e-sports tournaments",
-    tech: ["React", "Firebase", "WebSocket", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop",
-    github: "#",
-    live: "#"
-  },
-  {
-    title: "AI Chatbot",
-    description: "Intelligent chatbot with natural language processing capabilities",
-    tech: ["Python", "TensorFlow", "FastAPI", "React"],
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop",
-    github: "#",
-    live: "#"
-  }
 ];
 
 export default function Projects() {
