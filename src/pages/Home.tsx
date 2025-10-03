@@ -124,6 +124,18 @@ export default function Home() {
                 <li><span className="text-yellow-700 mr-2">▹</span>Data: Advanced Excel, Power BI, Python</li>
                 <li><span className="text-yellow-700 mr-2">▹</span>Databases: SQL</li>
               </ul>
+
+              {/* Hobbies */}
+              <div className="pt-2">
+                <p className="text-sm sm:text-base font-mono text-gray-700 leading-relaxed">
+                  Hobbies:
+                </p>
+                <ul className="text-sm font-mono text-gray-800 space-y-1 mt-2">
+                  <li><span className="text-yellow-700 mr-2">▹</span>E‑sports & story‑mode games</li>
+                  <li><span className="text-yellow-700 mr-2">▹</span>Web series & anime</li>
+                  <li><span className="text-yellow-700 mr-2">▹</span>Solving Rubik&apos;s Cube, Sudoku, etc.</li>
+                </ul>
+              </div>
             </div>
 
             <div className="mt-12 hidden md:flex space-x-4">
