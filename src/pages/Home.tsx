@@ -87,7 +87,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-mono mb-8 leading-[0.95]">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-mono mb-8 leading-[0.95]">
                 <span className="text-cyan-400 glitch-text">I'M</span>{" "}
                 <span className="text-pink-500 glitch-text-alt">VISHWESWARAN</span>
               </h1>
