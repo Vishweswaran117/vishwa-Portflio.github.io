@@ -59,10 +59,10 @@ export default function Home() {
       <div className="absolute inset-0 bg-scanlines opacity-10" />
       
       {/* Navigation */}
-      <nav className="relative z-10 border-b border-cyan-500/30 bg-black/80 backdrop-blur-sm">
+      <nav className="relative z-10 border-b border-cyan-500/50 bg-black/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Make header container relative to position a centered title */}
-          <div className="relative flex items-center justify-between h-16">
+          <div className="relative flex items-center justify-between h-20">
             <motion.button
               onClick={() => navigate("/")}
               className="text-cyan-400 font-bold text-xl font-mono glitch-text cursor-pointer"
@@ -77,7 +77,7 @@ export default function Home() {
                 <motion.button
                   key={item}
                   onClick={() => navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
-                  className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-mono text-cyan-400 hover:text-pink-500 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/50 transition-all duration-300 neon-glow cursor-pointer"
+                  className="px-3 sm:px-5 py-3 text-sm md:text-base font-mono text-cyan-400 hover:text-pink-500 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/50 transition-all duration-300 neon-glow cursor-pointer"
                   whileHover={{ y: -2 }}
                 >
                   {item}
@@ -92,12 +92,14 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="pointer-events-none absolute left-1/2 -translate-x-1/2"
             >
-              <span className="text-xs sm:text-sm md:text-base font-mono tracking-[0.2em] text-green-400 neon-text">
+              <span className="text-sm sm:text-base md:text-lg font-mono tracking-[0.2em] text-green-400 neon-text">
                 PORTFOLIO
               </span>
             </motion.div>
           </div>
         </div>
+        {/* Decorative neon underline */}
+        <div className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-0.5 bg-gradient-to-r from-cyan-500 via-pink-500 to-green-400 opacity-80" />
       </nav>
 
       {/* Hero Section: text + image */}
