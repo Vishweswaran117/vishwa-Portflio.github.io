@@ -69,7 +69,7 @@ export default function Resume() {
           <div className="space-y-6 border-l-2 border-cyan-500/30 pl-6">
             <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
               <h3 className="text-xl font-mono font-bold text-green-400">Data Analyst Intern</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">Placemantra • Internship</p>
+              <p className="text-cyan-400 font-mono text-sm mb-2">Placemantra • Internship • Bangalore</p>
               <p className="text-gray-400 font-mono text-sm">
                 Assisted in data cleaning, analysis, and reporting using Excel, Power BI, and Python
                 libraries. Built dashboards, performed exploratory analysis, and supported insights delivery.
@@ -92,7 +92,7 @@ export default function Resume() {
           <div className="space-y-6 border-l-2 border-cyan-500/30 pl-6">
             <div className="cyber-card border border-cyan-500/30 bg-black/60 p-6">
               <h3 className="text-xl font-mono font-bold text-green-400">B.Sc Computer Science</h3>
-              <p className="text-cyan-400 font-mono text-sm mb-2">VET Institute of Arts and Science • Studying</p>
+              <p className="text-cyan-400 font-mono text-sm mb-2">VET Institute of Arts and Science • 2024 - 2027</p>
               <p className="text-gray-400 font-mono text-sm">
                 Focus on core computer science, programming, data analysis, and modern web technologies.
               </p>
