@@ -2,25 +2,19 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Button } from "@/components/ui/button";
-import { useRef } from "react";
 
 export default function Home() {
   const navigate = useNavigate();
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [photoUrl, setPhotoUrl] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [photoUrl, setPhotoUrl] = useState<string | null>(DEFAULT_PHOTO_URL);
 
   // Add: flip orientation state
   const [faceRight, setFaceRight] = useState<boolean>(false);
 
-  // Load saved photo on mount
+  // Update: only load saved flip preference (no saved photo)
   useEffect(() => {
-    const saved = localStorage.getItem("profilePhoto");
-    if (saved) setPhotoUrl(saved);
-
-    // Load saved flip preference
     const savedFlip = localStorage.getItem("profilePhotoFlip");
     if (savedFlip !== null) setFaceRight(savedFlip === "true");
   }, []);
@@ -59,31 +53,6 @@ export default function Home() {
   const setFlip = (v: boolean) => {
     setFaceRight(v);
     localStorage.setItem("profilePhotoFlip", v ? "true" : "false");
-  };
-
-  // Add: handlers for upload and remove
-  const handleChooseFile = () => {
-    fileInputRef.current?.click();
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    if (!file.type.startsWith("image/")) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      const dataUrl = reader.result as string;
-      setPhotoUrl(dataUrl);
-      localStorage.setItem("profilePhoto", dataUrl);
-    };
-    reader.readAsDataURL(file);
-    e.target.value = "";
-  };
-
-  const handleRemovePhoto = () => {
-    setPhotoUrl(null);
-    localStorage.removeItem("profilePhoto");
-    // Optional: keep their flip preference; no change here
   };
 
   return (
@@ -181,37 +150,20 @@ export default function Home() {
                 <img
                   src={photoUrl}
                   alt="Profile"
-                  // Apply flip when facing right
                   className={`w-full h-full object-cover opacity-90 transition-transform duration-300 ${faceRight ? "-scale-x-100" : ""}`}
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
                   <span className="text-cyan-400 font-mono text-xs sm:text-sm opacity-80">
-                    UPLOAD YOUR PHOTO
+                    NO PHOTO
                   </span>
                 </div>
               )}
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-cyan-500/10 via-pink-500/10 to-green-400/10" />
-              {/* Extra subtle inner glow ring */}
               <div className="pointer-events-none absolute inset-2 rounded-md ring-1 ring-cyan-500/30" />
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                onChange={handleFileChange}
-                className="hidden"
-              />
-              <Button
-                variant="outline"
-                className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono cursor-pointer"
-                onClick={handleChooseFile}
-              >
-                {photoUrl ? "Change Photo" : "Upload Photo"}
-              </Button>
-
               {photoUrl && (
                 <>
                   <Button
@@ -228,19 +180,12 @@ export default function Home() {
                   >
                     Face Left
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="border-pink-500/50 text-pink-500 hover:bg-pink-500/10 font-mono cursor-pointer"
-                    onClick={handleRemovePhoto}
-                  >
-                    Remove
-                  </Button>
                 </>
               )}
             </div>
 
             <p className="text-xs sm:text-sm text-green-400/80 font-mono text-center max-w-md">
-              Tip: For best results, use a square image (e.g., 800x800). Your photo and orientation are saved locally on this device.
+              Your image is fixed on this page. Orientation preference is saved locally.
             </p>
           </div>
         </motion.div>
@@ -254,3 +199,5 @@ export default function Home() {
     </div>
   );
 }
+
+const DEFAULT_PHOTO_URL = "https://harmless-tapir-303.convex.cloud/api/storage/bf08bb4b-9c69-4359-a806-23c2ca196c47";
