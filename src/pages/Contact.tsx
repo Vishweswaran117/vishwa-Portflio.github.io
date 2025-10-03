@@ -110,11 +110,11 @@ export default function Contact() {
 
               <div className="space-y-4">
                 <a
-                  href="mailto:vishweswaran@example.com"
+                  href="mailto:iamvishwa117@gmail.com"
                   className="flex items-center text-gray-800 hover:text-yellow-700 transition-colors font-mono cursor-pointer"
                 >
                   <Mail className="w-5 h-5 mr-3" />
-                  vishweswaran@example.com
+                  iamvishwa117@gmail.com
                 </a>
               </div>
             </div>
