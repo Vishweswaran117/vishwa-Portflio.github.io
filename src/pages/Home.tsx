@@ -109,6 +109,23 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Intro section */}
+            <div className="mt-6 space-y-4">
+              <p className="text-sm sm:text-base font-mono text-gray-700 leading-relaxed">
+                I'm a B.Sc Computer Science student at VET Institute of Arts & Science (2024–2027) from Erode, Tamilnadu. 
+                I enjoy building clean, functional web experiences and exploring data through analysis and visualization.
+              </p>
+              <p className="text-sm sm:text-base font-mono text-gray-700 leading-relaxed">
+                Recently, I worked as a Data Analyst Intern at Placemantra (Bangalore), focusing on Excel, Power BI, and Python for 
+                cleaning, dashboards, and insights. I'm also passionate about programming, problem solving, and e‑sports.
+              </p>
+              <ul className="text-sm font-mono text-gray-800 space-y-1">
+                <li><span className="text-yellow-700 mr-2">▹</span>Web: HTML, CSS, JavaScript, React</li>
+                <li><span className="text-yellow-700 mr-2">▹</span>Data: Advanced Excel, Power BI, Python</li>
+                <li><span className="text-yellow-700 mr-2">▹</span>Databases: SQL</li>
+              </ul>
+            </div>
+
             <div className="mt-12 hidden md:flex space-x-4">
               <div className="w-20 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent" />
               <div className="w-20 h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent" />
