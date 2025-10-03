@@ -16,6 +16,10 @@ export default function Home() {
     "E-Sports Player"
   ];
 
+  // Add a fixed profile image URL
+  const PROFILE_URL =
+    "https://harmless-tapir-303.convex.cloud/api/storage/bf08bb4b-9c69-4359-a806-23c2ca196c47";
+
   useEffect(() => {
     const currentRole = roles[roleIndex];
     const timeout = setTimeout(() => {
@@ -73,42 +77,69 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div className="relative z-10 flex items-center justify-center min-h-[calc(100vh-4rem)] px-4">
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl sm:text-7xl md:text-9xl font-bold font-mono mb-8">
-              <span className="text-cyan-400 glitch-text">I'M</span>{" "}
-              <span className="text-pink-500 glitch-text-alt">VISHWESWARAN</span>
-            </h1>
-          </motion.div>
+      {/* Hero Section: text + image */}
+      <div className="relative z-10 min-h-[calc(100vh-4rem)] px-4 flex items-center">
+        <div className="mx-auto w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          {/* Left: Title + Typewriter */}
+          <div className="text-center md:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-mono mb-8 leading-[0.95]">
+                <span className="text-cyan-400 glitch-text">I'M</span>{" "}
+                <span className="text-pink-500 glitch-text-alt">VISHWESWARAN</span>
+              </h1>
+            </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="h-20 flex items-center"
+            >
+              <div className="text-2xl sm:text-4xl md:text-5xl font-mono text-green-400 neon-text">
+                {text}
+                <span className="animate-pulse">|</span>
+              </div>
+            </motion.div>
+
+            {/* Decorative Lines */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="mt-12 hidden md:flex space-x-4"
+            >
+              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-pink-500 to-transparent" />
+              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent" />
+            </motion.div>
+          </div>
+
+          {/* Right: Profile Image */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="h-20 flex items-center justify-center"
+            initial={{ opacity: 0, x: 20, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="justify-self-center md:justify-self-end w-full max-w-sm"
           >
-            <div className="text-2xl sm:text-4xl md:text-5xl font-mono text-green-400 neon-text">
-              {text}
-              <span className="animate-pulse">|</span>
+            <div className="relative cyber-card border border-cyan-500/40 bg-black/60 backdrop-blur-sm p-3">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -inset-1 bg-gradient-to-tr from-cyan-500/20 via-pink-500/10 to-green-400/20 blur-2xl" />
+              </div>
+              <div className="relative overflow-hidden aspect-[4/5]">
+                <img
+                  src={PROFILE_URL}
+                  alt="Vishweswaran portrait"
+                  className="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-300"
+                />
+                <div className="absolute inset-0 border border-cyan-500/30 pointer-events-none" />
+                <div className="absolute top-3 left-3 text-xs font-mono text-cyan-400">PROFILE_</div>
+                <div className="absolute bottom-3 right-3 text-xs font-mono text-pink-500">LIVE</div>
+              </div>
             </div>
-          </motion.div>
-
-          {/* Decorative Elements */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="mt-12 flex justify-center space-x-4"
-          >
-            <div className="w-20 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-            <div className="w-20 h-1 bg-gradient-to-r from-transparent via-pink-500 to-transparent" />
-            <div className="w-20 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent" />
           </motion.div>
         </div>
       </div>
