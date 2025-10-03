@@ -4,41 +4,41 @@ import { useNavigate } from "react-router";
 
 const skills = [
   {
-    category: "Web Development",
-    icon: Code,
-    items: ["React", "TypeScript", "Node.js", "HTML/CSS", "Tailwind"],
-    color: "cyan"
-  },
-  {
-    category: "Business Analysis",
-    icon: TrendingUp,
-    items: ["Data Analysis", "Requirements Gathering", "Process Mapping", "Stakeholder Management"],
-    color: "pink"
-  },
-  {
     category: "Programming",
     icon: Brain,
-    items: ["Python", "JavaScript", "Java", "C++", "SQL"],
-    color: "green"
+    items: ["Basics: C", "Basics: C++", "Basics: Java", "Advanced Python"],
+    color: "green",
   },
   {
-    category: "Design",
-    icon: Palette,
-    items: ["UI/UX Design", "Figma", "Adobe XD", "Wireframing", "Prototyping"],
-    color: "purple"
+    category: "Web Development",
+    icon: Code,
+    items: ["HTML", "CSS", "JavaScript", "Node.js", "React", "Web3", "DApps"],
+    color: "cyan",
   },
   {
-    category: "Database",
+    category: "Data & Analytics",
+    icon: TrendingUp,
+    items: ["Advanced Excel", "Power BI"],
+    color: "pink",
+  },
+  {
+    category: "Databases",
     icon: Database,
-    items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Convex"],
-    color: "yellow"
+    items: ["SQL - Database"],
+    color: "yellow",
   },
   {
-    category: "E-Sports",
+    category: "Languages",
+    icon: Palette,
+    items: ["English", "Tamil", "Hindi (Proficient)"],
+    color: "purple",
+  },
+  {
+    category: "Typing",
     icon: Gamepad2,
-    items: ["Strategic Planning", "Team Coordination", "Quick Decision Making", "Performance Analysis"],
-    color: "red"
-  }
+    items: ["Typewriting (Higher & Lower)", "Speed: 45 WPM"],
+    color: "red",
+  },
 ];
 
 export default function Skills() {
