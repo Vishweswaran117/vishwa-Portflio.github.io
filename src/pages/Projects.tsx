@@ -18,7 +18,7 @@ const projects = [
     tech: ["React", "Node.js", "Express", "MongoDB", "NLP"],
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
-    github: "https://github.com/Vishweswaran117",
+    github: "https://github.com/Vishweswaran117/ai-resume-sorter.github.io.git",
     live: "#",
   },
 ];
