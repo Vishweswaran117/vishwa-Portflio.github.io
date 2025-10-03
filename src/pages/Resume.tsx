@@ -1,4 +1,4 @@
-import { Download, Briefcase, GraduationCap, Award } from "lucide-react";
+import { Download, Briefcase, GraduationCap, Award, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router";
 
 export default function Resume() {
@@ -123,6 +123,18 @@ export default function Resume() {
                 <p className="text-gray-800 font-mono text-sm">▹ {cert}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6">
+            <a
+              href="https://drive.google.com/drive/folders/13fam3RErdqk5kMPvYJx1o0qWo9ikMvEj?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white font-mono border-2 border-yellow-600 px-4 py-2 cursor-pointer"
+            >
+              <ExternalLink className="w-4 h-4" />
+              View Certificates (Drive)
+            </a>
           </div>
         </section>
       </div>
