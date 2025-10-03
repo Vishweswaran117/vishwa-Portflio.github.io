@@ -8,7 +8,12 @@ import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router";
 import "./index.css";
-import Landing from "./pages/Landing.tsx";
+import Home from "./pages/Home.tsx";
+import Skills from "./pages/Skills.tsx";
+import Resume from "./pages/Resume.tsx";
+import Achievements from "./pages/Achievements.tsx";
+import Projects from "./pages/Projects.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import "./types/global.d.ts";
 
@@ -48,8 +53,13 @@ createRoot(document.getElementById("root")!).render(
         <BrowserRouter>
           <RouteSyncer />
           <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} /> {/* TODO: change redirect after auth to correct page */}
+            <Route path="/" element={<Home />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
