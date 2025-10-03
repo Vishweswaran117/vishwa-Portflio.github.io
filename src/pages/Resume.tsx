@@ -124,16 +124,16 @@ export default function Resume() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              "Advanced Python Course, Nurture Infotech (Certification ID: NIT24044) – Gained in-depth knowledge of Python programming and practical applications.",
-              "SQL Database Course, Nurture InfoTech (Certification ID: NIT24044) – Learned database design, queries, and data management using SQL.",
-              "Full Stack Web Development, Udemy – Acquired skills in building responsive, dynamic web applications using front-end and back-end technologies.",
-              "Front-End Web Development, IBM SkillsBuild – Developed proficiency in designing interactive and user-friendly web interfaces.",
-              "English Proficiency, Great Learning – Improved communication skills for professional and technical environments.",
-              "Data Analytics, Place Mantra, Bangalore – Learned techniques for analyzing, interpreting, and visualizing data to support decision-making.",
-              "C++ Basics, Scaler – Gained foundational knowledge of object-oriented programming and problem-solving using C++.",
-              "Certified in English Typewriting (Higher & Lower) – 45 WPM, Tamil Nadu Government. Successfully completed government-recognized proficiency in typewriting.",
-              "NCC 'A' Certificate (2021–2023) – Awarded by National Cadet Corps (NCC) during school.",
-              "Hindi Language Certification – Completed all 8 levels from Parthmic to Praveen",
+              "Advanced Python — Nurture Infotech (ID: NIT24044)",
+              "SQL Database — Nurture Infotech (ID: NIT24044)",
+              "Full Stack Web Development — Udemy",
+              "Front-End Web Development — IBM SkillsBuild",
+              "English Proficiency — Great Learning",
+              "Data Analytics — Place Mantra, Bangalore",
+              "C++ Basics — Scaler",
+              "English Typewriting (Higher & Lower) — 45 WPM, TN Govt.",
+              "NCC 'A' Certificate (2021–2023)",
+              "Hindi Language Certification — Levels 1–8 (Parthmic to Praveen)",
             ].map((cert) => (
               <motion.div
                 key={cert}
