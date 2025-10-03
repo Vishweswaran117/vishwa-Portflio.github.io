@@ -19,7 +19,7 @@ export default function Home() {
     "https://harmless-tapir-303.convex.cloud/api/storage/bf08bb4b-9c69-4359-a806-23c2ca196c47";
 
   const socialLinks = {
-    github: "#",
+    github: "https://github.com/Vishweswaran117",
     linkedin: "#",
     email: "mailto:your@email.com",
     instagram: "#",
