@@ -123,8 +123,8 @@ export default function Contact() {
               <h3 className="text-xl font-mono font-bold text-yellow-700 mb-4">SOCIAL LINKS</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: Github, href: "#", label: "GitHub" },
-                  { icon: Linkedin, href: "#", label: "LinkedIn" },
+                  { icon: Github, href: "https://github.com/Vishweswaran117", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/vishweswaran-r-809226301/", label: "LinkedIn" },
                   { icon: Twitter, href: "#", label: "Twitter" },
                 ].map((social) => {
                   const Icon = social.icon;
