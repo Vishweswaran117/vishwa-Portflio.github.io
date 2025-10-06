@@ -136,12 +136,6 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-
-            <div className="mt-12 hidden md:flex space-x-4">
-              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent" />
-              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent" />
-              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-yellow-700 to-transparent" />
-            </div>
           </div>
 
           <div className="justify-self-center md:justify-self-end w-full max-w-sm">
