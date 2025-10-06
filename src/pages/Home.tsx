@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { Github, Linkedin, Instagram, MessageCircle } from "lucide-react";
+import { Github, Linkedin, Instagram, MessageCircle, Settings } from "lucide-react";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -193,6 +193,13 @@ export default function Home() {
             >
               <MessageCircle className="w-5 h-5 text-yellow-700" />
             </a>
+            <button
+              onClick={() => navigate("/admin")}
+              className="p-2 border border-yellow-500/40 bg-yellow-50 hover:border-yellow-600/50 hover:bg-yellow-100 transition-all cursor-pointer"
+              title="Admin Panel"
+            >
+              <Settings className="w-5 h-5 text-yellow-700" />
+            </button>
           </div>
         </div>
       </footer>
