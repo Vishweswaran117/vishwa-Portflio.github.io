@@ -1,0 +1,4 @@
+   "scripts": {
+     "deploy": "pnpm build && gh-pages -d dist"
+   }
+   
