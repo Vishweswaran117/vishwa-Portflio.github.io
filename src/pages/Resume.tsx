@@ -38,10 +38,14 @@ export default function Resume() {
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-16">
           <h1 className="text-5xl sm:text-7xl font-bold font-mono text-yellow-700">RESUME_</h1>
-          <button className="bg-yellow-600 hover:bg-yellow-700 text-white font-mono border-2 border-yellow-600 cursor-pointer px-4 py-2 inline-flex items-center gap-2">
+          <a
+            href="/assets/VISHWESWARAN-RESUME.pdf"
+            download="VISHWESWARAN-RESUME.pdf"
+            className="bg-yellow-600 hover:bg-yellow-700 text-white font-mono border-2 border-yellow-600 cursor-pointer px-4 py-2 inline-flex items-center gap-2"
+          >
             <Download className="w-4 h-4" />
             DOWNLOAD
-          </button>
+          </a>
         </div>
 
         <section className="mb-12">
