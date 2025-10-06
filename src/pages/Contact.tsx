@@ -145,7 +145,14 @@ export default function Contact() {
                 {isSubmitting ? "SENDING..." : "SEND"}
               </button>
               {submitted && (
-                <p className="text-green-700 text-sm font-mono">Message sent successfully.</p>
+                <div className="border-2 border-yellow-500/50 bg-yellow-50 p-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                  <p className="text-yellow-800 font-mono text-sm font-bold text-center">
+                    ✓ MESSAGE SENT SUCCESSFULLY
+                  </p>
+                  <p className="text-yellow-700 font-mono text-xs text-center mt-1">
+                    Thank you for reaching out. I'll get back to you soon!
+                  </p>
+                </div>
               )}
             </form>
           </div>
