@@ -2,22 +2,42 @@ import { Mail, Github, Linkedin, MessageCircle, Send } from "lucide-react";
 import { Phone } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useState } from "react";
+import { useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { toast } from "sonner";
 
 export default function Contact() {
   const navigate = useNavigate();
+  const createMessage = useMutation(api.messages.create);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Keep simple UX: mark submitted without JS effects
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 3000);
+    setIsSubmitting(true);
+    
+    try {
+      await createMessage({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      });
+      
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      toast.success("Message sent successfully!");
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,6 +87,7 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 px-3 py-2"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -77,6 +98,7 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 px-3 py-2"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -86,14 +108,16 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 min-h-32 px-3 py-2"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-mono border-2 border-yellow-600 cursor-pointer inline-flex items-center justify-center gap-2 px-3 py-2"
+                disabled={isSubmitting}
+                className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-mono border-2 border-yellow-600 cursor-pointer inline-flex items-center justify-center gap-2 px-3 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="w-4 h-4" />
-                SEND
+                {isSubmitting ? "SENDING..." : "SEND"}
               </button>
               {submitted && (
                 <p className="text-green-700 text-sm font-mono">Message sent successfully.</p>
@@ -126,7 +150,7 @@ export default function Contact() {
                 {[
                   { icon: Github, href: "https://github.com/Vishweswaran117", label: "GitHub" },
                   { icon: Linkedin, href: "https://www.linkedin.com/in/vishweswaran-r-809226301/", label: "LinkedIn" },
-                  { icon: Phone, href: "https://wa.me/YOUR_PHONE_NUMBER", label: "WhatsApp" },
+                  { icon: Phone, href: "https://wa.me/919597446488", label: "WhatsApp" },
                   { icon: MessageCircle, href: "https://discord.com/users/vishwagamer_", label: "Discord" },
                 ].map((social) => {
                   const Icon = social.icon;
