@@ -1,2 +1,3 @@
-# Make changes, then:
-pnpm run deploy
+git add .
+git commit -m "Updated my resume"
+git push
