@@ -183,11 +183,23 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
           ) : (
             <>
               <CardHeader className="text-center mt-4">
+                <div className="flex items-center justify-between mb-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setStep("signIn")}
+                    disabled={isLoading}
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    ← Back
+                  </Button>
+                </div>
                 <CardTitle>Check your email</CardTitle>
                 <CardDescription>
                   We've sent a code to {step.email}
                 </CardDescription>
               </CardHeader>
+=======
               <form onSubmit={handleOtpSubmit}>
                 <CardContent className="pb-4">
                   <input type="hidden" name="email" value={step.email} />
