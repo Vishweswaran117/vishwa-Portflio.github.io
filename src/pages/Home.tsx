@@ -125,7 +125,7 @@ export default function Home() {
               </ul>
 
               {/* Hobbies */}
-              <div className="pt-2">
+              <div className="pt-2 pb-8">
                 <p className="text-sm sm:text-base font-mono text-gray-700 leading-relaxed">
                   Hobbies:
                 </p>
