@@ -25,13 +25,13 @@ export default function Admin() {
       if (!isAuthenticated) {
         // Redirect to auth page with return URL
         navigate("/auth?redirect=/admin");
-      } else if (!isAdmin) {
+      } else if (user && !isAdmin) {
         // User is authenticated but not admin
         toast.error("Unauthorized access - Admin only");
         navigate("/");
       }
     }
-  }, [isLoading, isAuthenticated, isAdmin, navigate]);
+  }, [isLoading, isAuthenticated, isAdmin, user, navigate]);
 
   if (isLoading || !isAuthenticated || !isAdmin) {
     return (
