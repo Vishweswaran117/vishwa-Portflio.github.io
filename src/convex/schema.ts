@@ -39,59 +39,6 @@ const schema = defineSchema(
       phone: v.string(),
       message: v.string(),
     }).index("by_email", ["email"]),
-
-    // Portfolio content tables
-    portfolioContent: defineTable({
-      section: v.string(), // "home", "about", etc.
-      content: v.string(), // JSON stringified content
-    }).index("by_section", ["section"]),
-
-    skills: defineTable({
-      category: v.string(),
-      items: v.array(v.string()),
-      icon: v.string(),
-      order: v.number(),
-    }).index("by_order", ["order"]),
-
-    projects: defineTable({
-      title: v.string(),
-      description: v.string(),
-      tech: v.array(v.string()),
-      image: v.string(),
-      github: v.string(),
-      live: v.string(),
-      order: v.number(),
-    }).index("by_order", ["order"]),
-
-    achievements: defineTable({
-      title: v.string(),
-      description: v.string(),
-      year: v.string(),
-      icon: v.string(),
-      order: v.number(),
-    }).index("by_order", ["order"]),
-
-    experience: defineTable({
-      title: v.string(),
-      company: v.string(),
-      location: v.string(),
-      description: v.string(),
-      order: v.number(),
-    }).index("by_order", ["order"]),
-
-    education: defineTable({
-      degree: v.string(),
-      institution: v.string(),
-      years: v.string(),
-      description: v.string(),
-      score: v.optional(v.string()),
-      order: v.number(),
-    }).index("by_order", ["order"]),
-
-    certifications: defineTable({
-      name: v.string(),
-      order: v.number(),
-    }).index("by_order", ["order"]),
   },
   {
     schemaValidation: false,
