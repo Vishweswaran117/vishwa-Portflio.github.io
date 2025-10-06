@@ -21,12 +21,15 @@ export default function Admin() {
   const isAdmin = user?.email === "iamvishwa117@gmail.com";
 
   useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
-      navigate("/auth?redirect=/admin");
-    }
-    if (!isLoading && isAuthenticated && !isAdmin) {
-      toast.error("Unauthorized access");
-      navigate("/");
+    if (!isLoading) {
+      if (!isAuthenticated) {
+        // Redirect to auth page with return URL
+        navigate("/auth?redirect=/admin");
+      } else if (!isAdmin) {
+        // User is authenticated but not admin
+        toast.error("Unauthorized access - Admin only");
+        navigate("/");
+      }
     }
   }, [isLoading, isAuthenticated, isAdmin, navigate]);
 
