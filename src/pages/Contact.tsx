@@ -1,4 +1,5 @@
-import { Mail, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Github, Linkedin, MessageCircle, Send } from "lucide-react";
+import { Phone } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 
@@ -125,7 +126,8 @@ export default function Contact() {
                 {[
                   { icon: Github, href: "https://github.com/Vishweswaran117", label: "GitHub" },
                   { icon: Linkedin, href: "https://www.linkedin.com/in/vishweswaran-r-809226301/", label: "LinkedIn" },
-                  { icon: Twitter, href: "#", label: "Twitter" },
+                  { icon: Phone, href: "https://wa.me/YOUR_PHONE_NUMBER", label: "WhatsApp" },
+                  { icon: MessageCircle, href: "https://discord.com/users/vishwagamer_", label: "Discord" },
                 ].map((social) => {
                   const Icon = social.icon;
                   return (
