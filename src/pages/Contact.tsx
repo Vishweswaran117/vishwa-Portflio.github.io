@@ -87,7 +87,10 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 px-3 py-2"
                   required
+                  minLength={2}
+                  maxLength={100}
                   disabled={isSubmitting}
+                  title="Name must be between 2 and 100 characters"
                 />
               </div>
               <div>
@@ -98,7 +101,9 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 px-3 py-2"
                   required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   disabled={isSubmitting}
+                  title="Please enter a valid email address"
                 />
               </div>
               <div>
@@ -108,7 +113,10 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 min-h-32 px-3 py-2"
                   required
+                  minLength={10}
+                  maxLength={1000}
                   disabled={isSubmitting}
+                  title="Message must be between 10 and 1000 characters"
                 />
               </div>
               <button
