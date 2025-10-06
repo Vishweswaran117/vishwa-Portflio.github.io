@@ -13,7 +13,6 @@ import Resume from "./pages/Resume.tsx";
 import Achievements from "./pages/Achievements.tsx";
 import Projects from "./pages/Projects.tsx";
 import Contact from "./pages/Contact.tsx";
-import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import "./types/global.d.ts";
 
@@ -56,7 +55,6 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/auth" element={<Auth />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
