@@ -1,3 +1,1 @@
-git add .
-git commit -m "Updated my resume"
-git push
+pnpm approve-builds
