@@ -5,12 +5,14 @@ export const create = mutation({
   args: {
     name: v.string(),
     email: v.string(),
+    phone: v.string(),
     message: v.string(),
   },
   handler: async (ctx, args) => {
     const messageId = await ctx.db.insert("messages", {
       name: args.name,
       email: args.email,
+      phone: args.phone,
       message: args.message,
     });
     return messageId;

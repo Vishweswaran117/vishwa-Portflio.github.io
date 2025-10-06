@@ -12,6 +12,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -25,11 +26,12 @@ export default function Contact() {
       await createMessage({
         name: formData.name,
         email: formData.email,
+        phone: formData.phone,
         message: formData.message,
       });
       
       setSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", message: "" });
       toast.success("Message sent successfully!");
       setTimeout(() => setSubmitted(false), 3000);
     } catch (error) {
@@ -104,6 +106,21 @@ export default function Contact() {
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   disabled={isSubmitting}
                   title="Please enter a valid email address"
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="PHONE NUMBER"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full bg-white border border-yellow-500/40 text-gray-800 font-mono placeholder:text-gray-400 px-3 py-2"
+                  required
+                  pattern="[0-9]{10}"
+                  minLength={10}
+                  maxLength={10}
+                  disabled={isSubmitting}
+                  title="Please enter a valid 10-digit phone number"
                 />
               </div>
               <div>

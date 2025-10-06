@@ -36,6 +36,7 @@ const schema = defineSchema(
     messages: defineTable({
       name: v.string(),
       email: v.string(),
+      phone: v.string(),
       message: v.string(),
     }).index("by_email", ["email"]),
   },
