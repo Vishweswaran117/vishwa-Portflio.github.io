@@ -1,1 +1,1 @@
-pnpm approve-builds
+npx convex deploy --prod

@@ -1,4 +1,3 @@
-   "scripts": {
-     "deploy": "pnpm build && gh-pages -d dist"
-   }
-   
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
